@@ -22,7 +22,7 @@ public class SwimEntry extends Entry{
    
    public String getEntry() {
 	   String result = getName() + "Has swam"+ getDistance()+ "km"+ getWhere() + "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" 
-       + "on" + getDay() + "/" + getMonth() + "/" + super.getYear() +"\n";
+       + "on" + getDay() + "/" + getMonth() + "/" + getYear() +"\n";
 	   
 	   return result;
    }
