@@ -2,11 +2,11 @@
 public class Athlete {
 	 private String name;
 	 private String type;
-     private Float distance;
-     private Float time;
+     private float distance;
+     private float time;
      private Double duration;
      
-     public Athlete (String Name, String Type, Float Distance,Float Time,Double Duration) {
+     public Athlete (String Name, String Type, float Distance,float Time, float Duration) {
     	    setName(Name);
     	    setType(Type);
     	    setDistance(Distance);
