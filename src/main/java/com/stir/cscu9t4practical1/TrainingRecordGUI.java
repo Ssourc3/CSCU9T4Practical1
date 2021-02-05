@@ -26,6 +26,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labs = new JLabel(" Secs:");
     private JLabel labdist = new JLabel(" Distance (km):");
     private JButton addR = new JButton("Add");
+    private JButton allDates = new JButton("Find All by Date");
     private JButton lookUpByDate = new JButton("Look Up");
 
     private TrainingRecord myAthletes = new TrainingRecord();
