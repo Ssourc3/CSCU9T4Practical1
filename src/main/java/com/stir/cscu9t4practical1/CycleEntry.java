@@ -41,7 +41,7 @@ public class CycleEntry extends Entry{
 		this.terrain = terrain;
 	}
 	public String getEntry() {
-		   String result = super.getName() + "Has cycled"+ getDistance()+ "km"+ "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" + "with a tempo of:" + getTempo() + "with a terrain of:"
-	      + getTerrain() + "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() +"\n";
+		   String result = getName() + "Has cycled"+ getDistance()+ "km"+ "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" + "with a tempo of:" + getTempo() + "with a terrain of:"
+	      + getTerrain() + "on" + getDay() + "/" + getMonth() + "/" + getYear() +"\n";
 }
 }
