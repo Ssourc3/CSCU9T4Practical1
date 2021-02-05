@@ -1,17 +1,25 @@
 
-public class Athlete {
-	 private String name;
-	 private String type;
-     private float distance;
-     private float time;
-     private Double duration;
+public class Athlete extends Entry {
+      private String name;
+      private String type;
+      private float distance;
+      private int hours;
+      private int mins;
+      private int second;
+      private Double duration;
+      private String type;
+      
      
-     public Athlete (String Name, String Type, float Distance,float Time, float Duration) {
-    	    setName(Name);
-    	    setType(Type);
-    	    setDistance(Distance);
-    	    setTime(Time);
-    	    setDuration(Duration);   
+     public Athlete (String Name, String Type, float Distance, int Hours, int Mins, int Second, float Duration) {
+    
+	 name = Name;
+         type = Type;
+	 distance = Distance;
+	 hours = Hours;
+	 mins = Mins
+         second = Second;
+         duration = Duration;
+	      
     	    
     	  } //constructor
 
@@ -43,20 +51,20 @@ public class Athlete {
 	
 	//Return Distance 
 
-	public void setDistance(Float distance) {
+	public void setDistance(int distance) {
 		this.distance = distance;
 	}
 	
-	//Return Time
+	//Return Hours
 
-	public Float getTime() {
-		return time;
+	public Float getHours() {
+		return Hours;
 	}
 	
 	//Set Time
 
-	public void setTime(Float time) {
-		this.time = time;
+	public void setHours(int Hours) {
+		this.hours = hours;
 	}
 	
 	//Get Duration
