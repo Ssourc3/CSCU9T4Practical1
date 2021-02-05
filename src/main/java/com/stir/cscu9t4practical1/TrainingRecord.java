@@ -7,12 +7,16 @@ import java.util.*;
 
 public class TrainingRecord {
     private List<Entry> tr;
-    private List<SprintEntry> SprintEntrylist;
-    private List<CycleEntry> CycleEntryList;
-    private List<SwimEntry> SwimEntryList;
+    private List<SprintEntry> SprintEntry;
+    private List<CycleEntry> CycleEntry;
+    private List<SwimEntry> SwimEntry;
     
     public TrainingRecord() {
         tr = new ArrayList<Entry>();
+	SprintEntry = new ArrayList<SprintEntry>();
+	CycleEntry = new ArrayList<CycleEntry>();
+	SwimEntry = new ArrayList<SwimEntry>();
+	
     } //constructor
     
     // add a record to the list
@@ -31,18 +35,18 @@ public class TrainingRecord {
             }
        //adding Entry for Sprint
  public void addSprintEntry(SprintEntry sprintEntry)     {
-	 sprintEntryList.add(sprintEntry);
+	 sprintEntry.add(sprintEntry);
  }
  
  //adding Entry for Cycle
        
  public void addCycleEntry(CycleEntry cycleEntry) {
-	 cycleEntryList.add(cycleEntry);
+	 cycleEntry.add(cycleEntry);
  }
  
  //Adding Swim Entry 
  public void addSwimEntry(SwimEntry swimEntry) {
-	 swimEntryList.add(swimEntry);
+	 swimEntry.add(swimEntry);
  }
       
        return result;
