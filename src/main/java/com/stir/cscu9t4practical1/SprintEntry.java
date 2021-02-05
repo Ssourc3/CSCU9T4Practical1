@@ -30,8 +30,8 @@ public class SprintEntry extends Entry {
 	}
 	
 	 public String getEntry() {
-		 String result = super.getName() + "Has Swam" + GetDistance() + "km"+ getWhere() + "Within" + getHour()
-		 + "hrs" + "mins" + "secs"+ "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() + "\n";
+		 String result = super.getName() + "Has Sprinted" + GetDistance() + "km"+ "Within" + getHour()
+		 + "hrs" + getMin()+"mins" + getSec()+ "secs"+ "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() + "\n";
 		 
 		 return result;
 	 }
