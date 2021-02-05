@@ -21,8 +21,8 @@ public class SwimEntry extends Entry{
    }
    
    public String getEntry() {
-	   String result = super.getName() + "Has swam"+ getDistance()+ "km"+ getWhere() + "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" 
-       + "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() +"\n";
+	   String result = getName() + "Has swam"+ getDistance()+ "km"+ getWhere() + "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" 
+       + "on" + getDay() + "/" + getMonth() + "/" + super.getYear() +"\n";
 	   
 	   return result;
    }
