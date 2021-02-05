@@ -3,7 +3,7 @@
  */
 
 /**
- * @author sophiacachapero
+ * 
  *
  */
 public class CycleEntry extends Entry{
