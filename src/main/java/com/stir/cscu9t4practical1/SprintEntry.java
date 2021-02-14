@@ -4,34 +4,31 @@ public class SprintEntry extends Entry {
 	private int recovery_time;
 	private int repetitions;
 	
-	public SprintEntry(String Name, float Distance, int Month, int Year, int Hour, int Minute, int Seconds, 
+	public SprintEntry(String n, int d, int m, int y, int h, int min, int s, float dist, 
 			int Repetitions, int Recovery_time) {
 		
-		super(Name, Distance, Month, Year, Hour, Minute, Seconds, Distance);
 		
+	        super(n,d,m,y,h,min,s,dist);
 		repetitions = Repetitions;
+		recovery_time = Recovery_time;
 		
 	}
 
+	// get recovery 
 	public int getRecovery_time() {
 		return recovery_time;
 	}
 
-	public void setRecovery_time(int recovery_time) {
-		this.recovery_time = recovery_time;
-	}
-
+        // get Reps 
 	public int getRepetitions() {
 		return repetitions;
 	}
 
-	public void setRepetitions(int repetitions) {
-		this.repetitions = repetitions;
-	}
-	
+
+	//returns the results for GetEntry
 	 public String getEntry() {
-		 String result = super.getName() + "Has Sprinted" + GetDistance() + "km"+ "Within" + getHour()
-		 + "hrs" + getMin()+"mins" + getSec()+ "secs"+ "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() + "\n";
+		 String result = super.getName() + "Has Sprinted" + super.getDistance() + "km"+ "Within" + super.getHour()
+		 + "hrs" + super.getMin()+"mins" + super.getSec()+ "secs"+ "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() + "\n";
 		 
 		 return result;
 	 }
