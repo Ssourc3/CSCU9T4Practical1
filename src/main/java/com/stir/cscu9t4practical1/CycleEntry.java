@@ -7,14 +7,14 @@
  *
  */
 public class CycleEntry extends Entry{
- 
+        
 	private String tempo;
 	private String terrain;
 	
 	
-	public CycleEntry(String Name, int Distance, int Month, int Year, int Hour, int Minute, int Seconds, float Duration, String Tempo, String Terrain ) {
+	public CycleEntry(String n, int d, int m, int y, int h, int min, int s, float dist, String Tempo, String Terrain ) {
 	
-	super(Name,Duration,Month, Year, Hour, Minute, Seconds, Distance);
+	super(n,d,m,y,h,min,s,dist);
 	
 	tempo = Tempo;
 	terrain = Terrain;
@@ -27,21 +27,13 @@ public class CycleEntry extends Entry{
 	}
 
 
-	public void setTempo(String tempo) {
-		this.tempo = tempo;
-	}
-
-
 	public String getTerrain() {
 		return terrain;
 	}
 
 
-	public void setTerrain(String terrain) {
-		this.terrain = terrain;
-	}
 	public String getEntry() {
-		   String result = getName() + "Has cycled"+ getDistance()+ "km"+ "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" + "with a tempo of:" + getTempo() + "with a terrain of:"
-	      + getTerrain() + "on" + getDay() + "/" + getMonth() + "/" + getYear() +"\n";
+		   String result = super.getName() + "Has cycled"+ super.getDistance()+ "km"+ "within" + super.getHour() + "hrs"+ super.getMin() +"mins"+ super.getSec() + "secs" + "with a tempo of:" + getTempo() + "with a terrain of:"
+	      + getTerrain() + "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() +"\n";
 }
 }
