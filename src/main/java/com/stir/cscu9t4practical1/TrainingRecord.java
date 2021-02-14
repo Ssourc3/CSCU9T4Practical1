@@ -13,9 +13,6 @@ public class TrainingRecord {
     
     public TrainingRecord() {
         tr = new ArrayList<Entry>();
-	SprintEntry = new ArrayList<SprintEntry>();
-	CycleEntry = new ArrayList<CycleEntry>();
-	SwimEntry = new ArrayList<SwimEntry>();
 	
     } //constructor
     
@@ -53,7 +50,7 @@ public class TrainingRecord {
    } // lookupEntry
    
    //looking up Entry based on Date 
-   public String LookupEntry(int Day, int Month, int Year) {
+   public String LookupEntry(int d, int m, int y) {
 	   ListIterator<Entry> iter = tr.ListIterator();
 	   String result = "No matching records found, Try again";	   
 	   while (iter.hasNext()) {
@@ -70,7 +67,7 @@ public class TrainingRecord {
    }
    //returns all records for a given date 
    
-  public String FindAllDates(int Day, int Month, int Year) {
+  public String FindAllDates(int d, int m, int y) {
 	  ListIterator<Entry> iter = tr.listIterator();
 	  String result = "";
 	  
@@ -94,12 +91,12 @@ public class TrainingRecord {
    }
    
    //removing a record based on Name and Date
-   public String Delete(String Name, int Day, int Month, int Year) {
+   public String Delete(String n, int d, int m, int y) {
 	   ListIterator<Entry> entryIterator = tr.listIterator();
 	   
 	   //check if record matches 
 	   while(entryIterator.hasNext()) {
-		   Entry  current = entryIterator.next();
+		   Entry current = entryIterator.next();
 		if(current.getName().equals(name)&& current.getDay()==Day && current.getMonth()==Month && curret.getYear()==Year) {
 			tr.remove(current);
 			return "Record has been deleted";
