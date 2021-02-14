@@ -195,10 +195,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
       String Terrain = terrain.getText());
       String Tempo = Tempo.getText());
        //checks if there is already a matching record entered 
-    }else{
-        if(myAthletes.checkUniqueness(n, d, m, y)){
+    }else if(myAthletes.checkUniqueness(n, d, m, y)){
             return "Record already Exists";
             }
+          }
    } catch (Exception e){
         message = "enter a valid input.";
     }
