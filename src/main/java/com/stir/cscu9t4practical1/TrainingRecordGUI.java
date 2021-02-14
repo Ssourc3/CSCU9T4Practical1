@@ -112,6 +112,13 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(addR);
         addR.addActionListener(this);
         add(lookUpByDate);
+        
+        //Buttons are disabled before record is to be added or add button is used
+        
+        lookUpByDate.setEnabled(false);
+        allDates.setEnabled(false);
+        RemoveEntry.setEnabled(false);
+            
         lookUpByDate.addActionListener(this);
         add(allDates);
         allDates.addActionListener(this);
@@ -133,6 +140,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         String message = "";
         if (event.getSource() == addR) {
             message = addEntry("generic");
+            
+     //buttons are re-enabled after the Add button is clicked:
+        lookUpByDate.setEnabled(true);
+        allDates.setEnabled(true);
+        RemoveEntry.setEnabled(true);
         }
         if (event.getSource() == lookUpByDate) {
             message = lookupEntry();
@@ -165,6 +177,36 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         myAthletes.addEntry(e);
         return message;
     }
+    //checking input and adding new entry
+    if(n.isEmpty()|| m ==- 1|| d== -1||y == -1)){
+        return "Invalid Input try again";
+        
+     // new sprint record 
+    }else if(entry.equals("Sprint")){
+        int Reps = Integer.parseInt(entry.getText());
+        int Recovery_time = Integer.parseInt(recovery.getText());
+        e = new SprintEntry(n, d, m, y, h, mm, s, km, Reps, Recovery_time);
+      // new swim record   
+    }else if(entry.equals("Swim)){
+        String Swimwhere =  where.getText();
+       e = new SwimEntry(n,d,m,y,h,mm,s,km,Swimwhere);
+     // new cycle record 
+    }else (entry.equals("Cycle")){  
+      String Terrain = terrain.getText());
+      String Tempo = Tempo.getText());
+       //checks if there is already a matching record entered 
+    }else{
+        if(myAthletes.checkUniqueness(n, d, m, y)){
+            return "Record already Exists";
+            }
+         }
+   } catch (Exception e){
+        message = "enter a valid input.";
+    }
+        return message;
+    }
+   
+                                                                              
     
     public String lookupEntry() {
         int m = Integer.parseInt(month.getText());
