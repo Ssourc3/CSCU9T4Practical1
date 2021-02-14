@@ -21,16 +21,18 @@ public class CycleEntry extends Entry{
 	
 	}
 
-
+        //get Tempo
 	public String getTempo() {
 		return tempo;
 	}
 
-
+       //get Terrain
 	public String getTerrain() {
 		return terrain;
 	}
 
+	
+	//String returns results of getEntry
 
 	public String getEntry() {
 		   String result = super.getName() + "Has cycled"+ super.getDistance()+ "km"+ "within" + super.getHour() + "hrs"+ super.getMin() +"mins"+ super.getSec() + "secs" + "with a tempo of:" + getTempo() + "with a terrain of:"
