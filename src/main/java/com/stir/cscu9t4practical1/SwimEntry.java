@@ -4,25 +4,21 @@ public class SwimEntry extends Entry{
 	private String where;
 	
 
-    public SwimEntry(String Name, int Distance, int Month, int Year, int Hour, int Minute, int Seconds, float Duration, String Where) {
+    public SwimEntry(String n, int d, int m, int y, int h, int m, int s, float dist, String Where) {
     	
-    super(Name,Distance,Month, Year, Hour, Minute, Seconds, Distance);
+    super(n,d,m,y,h,min,s,dist);
     
     where = Where;
     
    
-    } 
-   public void setWhere(String where) {
-		this.where = where;
-	}
 //getting where 
    public String getWhere() {
 	   return where;
    }
    
    public String getEntry() {
-	   String result = getName() + "Has swam"+ getDistance()+ "km"+ "in a:" +getWhere() + "within" + getHour() + "hrs"+ getMin() +"mins"+ getSec() + "secs" 
-       + "on" + getDay() + "/" + getMonth() + "/" + getYear() +"\n";
+	   String result = super.getName() + "Has swam"+ super.getDistance()+ "km"+ "in a:" + getWhere() + "within" + super.getHour() + "hrs"+ super.getMin() +"mins"+ super.getSec() + "secs" 
+       + "on" + super.getDay() + "/" + super.getMonth() + "/" + super.getYear() +"\n";
 	   
 	   return result;
    }
