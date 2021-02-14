@@ -199,7 +199,6 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         if(myAthletes.checkUniqueness(n, d, m, y)){
             return "Record already Exists";
             }
-         }
    } catch (Exception e){
         message = "enter a valid input.";
     }
