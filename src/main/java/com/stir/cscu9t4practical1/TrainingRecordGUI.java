@@ -9,6 +9,7 @@ import java.lang.Number;
 
 public class TrainingRecordGUI extends JFrame implements ActionListener {
 
+    //TextFields
     private JTextField name = new JTextField(30);
     private JTextField day = new JTextField(2);
     private JTextField month = new JTextField(2);
@@ -17,6 +18,14 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JTextField mins = new JTextField(2);
     private JTextField secs = new JTextField(2);
     private JTextField dist = new JTextField(4);
+    private JTextField entry = new JTextField(10);
+    private JTextField reps = new JTextField(5);
+    private JTextField recovery = new JTextField(5);
+    private JTextField terrain = new JTextField(20);
+    private JTextField Tempo = new JTextField(20);
+    private JTextField where = new JTextField(20);
+        
+   //Labels 
     private JLabel labn = new JLabel(" Name:");
     private JLabel labd = new JLabel(" Day:");
     private JLabel labm = new JLabel(" Month:");
@@ -24,8 +33,15 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labh = new JLabel(" Hours:");
     private JLabel labmm = new JLabel(" Mins:");
     private JLabel labs = new JLabel(" Secs:");
-    private JLabel labTy = new JLabel("Type:");
+    private JLabel labEntry = new JLabel("Type (Cycle/Swim/Sprint):");
     private JLabel labdist = new JLabel(" Distance (km):");
+    private JLabel labRepitions = new JLabel("reps");
+    private JLabel labRecoveryTime = new JLabel("Recovery Time");
+    private JLabel labWhere = new JLabel("Swam where");
+    private JLabel labcycleTempo = new JLabel("Cycle Tempo");
+    private JLabel labcycleTerrain = new JLabel("Cycle Terrain);                                     
+    
+    // Buttons in Interface 
     private JButton addR = new JButton("Add");
     private JButton RemoveEntry= new JButton("Remove");
     private JButton allDates = new JButton("Find All by Date");
@@ -67,10 +83,40 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(labdist);
         add(dist);
         dist.setEditable(true);
+       
+        //adding labels and textfields
+        
+        //entry type
+        add(labEntry); 
+        add(entry);   
+        entry.setEditable(true);
+        
+        //Cycle 
+        add(labcycleTempo);
+        add(Tempo);
+        Tempo.setEditable(true);
+        add(labcycleTerrain);
+        add(terrain);
+        terrain.setEditable(true);
+        
+        //Swim 
+        add(labWhere);
+        add(where);
+        where.setEditable(true);
+        
+        //Sprint
+        add(labRepitions);
+        add(reps);
+        reps.setEditable(true);  
+            
         add(addR);
         addR.addActionListener(this);
         add(lookUpByDate);
         lookUpByDate.addActionListener(this);
+        add(allDates);
+        allDates.addActionListener(this);
+        add(RemoveEntry);
+        RemoveEntry.addActionListener(this);
         add(outputArea);
         outputArea.setEditable(false);
         setSize(720, 200);
@@ -97,8 +143,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         if(event.getSource() ==lookUpByDate) {
             message = lookUpByDate();
         } 
-        if(event.getSource()==Delete){
-            message = Delete();
+        if(event.getSource()==RemoveEntry){
+            message = RemoveEntry();
         }     
         outputArea.setText(message);
         blankDisplay();
@@ -129,6 +175,34 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         return message;
     }
 
+     /**
+     * finds all records with matching day/month/year
+     * returns matching records or an empty set
+     * (Find all dates)
+     */
+     public String FindAllDates() {
+         int m =Integer.parseInt(month.getText());
+         int d = Integer.parseInt(day.getText());
+         int y = Integer.parseInt(year.getText());
+         outputArea.setText("looking up record ...");
+         String message = myAthletes.lookupEntry(d, m, y);
+         return message;
+     }
+     /**
+     * Removes a record based on matching:
+     * Day/Month/Year and Name
+     */
+     
+    public String Delete() {
+        String n = name.getText();
+        int m =Integer.parseInt(month.getText());
+        int d = Integer.parseInt(day.getText());
+        int y = Integer.parseInt(year.getText());
+        
+        String message = myAthletes.RemoveEntry(n,d, m, y);
+        return message;
+    }
+                                                
     public void blankDisplay() {
         name.setText("");
         day.setText("");
