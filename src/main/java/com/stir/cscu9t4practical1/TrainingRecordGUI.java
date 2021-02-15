@@ -177,36 +177,34 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         myAthletes.addEntry(e);
         return message;
     }
-    //checking input and adding new entry
+    //checking input and adding new entry                                             
     if(n.isEmpty()|| m ==- 1|| d== -1||y == -1)){
-        return "Invalid Input try again";
-        
+        return "Invalid Input try again";  
+    }
      // new sprint record 
-    }else if(entry.equals("Sprint")){
+    else if(entry.equals("Sprint")){
         int Reps = Integer.parseInt(entry.getText());
         int Recovery_time = Integer.parseInt(recovery.getText());
         e = new SprintEntry(n, d, m, y, h, mm, s, km, Reps, Recovery_time);
+    }
       // new swim record   
-    }else if(entry.equals("Swim)){
+    else if(entry.equals("Swim)){
         String Swimwhere =  where.getText();
        e = new SwimEntry(n,d,m,y,h,mm,s,km,Swimwhere);
+    }                     
      // new cycle record 
-    }else (entry.equals("Cycle")){  
+    else if(entry.equals("Cycle")){  
       String Terrain = terrain.getText());
       String Tempo = Tempo.getText());
        //checks if there is already a matching record entered 
-    }else if(myAthletes.checkUniqueness(n, d, m, y)){
+    }
+    else (myAthletes.checkUniqueness(n, d, m, y)){
             return "Record already Exists";
-            }
-          }
-   } catch (Exception e){
-        message = "enter a valid input.";
     }
-        return message;
+     else{
+        return "enter a valid input.";
     }
-   
-                                                                              
-    
+  }                     
     public String lookupEntry() {
         int m = Integer.parseInt(month.getText());
         int d = Integer.parseInt(day.getText());
